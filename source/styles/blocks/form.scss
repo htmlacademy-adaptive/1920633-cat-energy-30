@@ -1,3 +1,28 @@
+.form__section {
+  padding-top: 25px;
+}
+
+.form__container {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+
+  &--checkbox {
+    @media (min-width: $tablet-width) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 60px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 80px;
+    }
+  }
+}
+
 .form__fieldset {
   margin: 0;
   padding: 0;
@@ -10,8 +35,13 @@
   align-items: center;
   min-height: 30px;
 
-  &--radio:not(:last-child),
-  &--checkbox:not(:last-child) {
+  @media (max-width: $mobile-width) {
+    &--checkbox:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &--radio:not(:last-child) {
     margin-bottom: 13px;
   }
 }
@@ -66,6 +96,28 @@
   }
 }
 
+.form__title-wrapper {
+  border-top: 2px solid $basic-green;
+}
+
+.form__title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 20px;
+  background-color: $white;
+  transform: translate(-20px, -17px);
+
+  @media (max-width: $tablet-width) {
+    max-width: 222px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 0 40px;
+    transform: translate(-40px, -17px);
+  }
+}
+
 .form__control {
   flex-grow: 1;
   height: 45px;
@@ -100,6 +152,14 @@
   &--error + .form__icon {
     color: $error;
   }
+
+  &--textarea {
+    height: 150px;
+
+    @media (min-width: $tablet-width) {
+      height: 175px;
+    }
+  }
 }
 
 .form__control:placeholder-shown {
@@ -117,7 +177,18 @@
   color: $special-dark-grey;
 }
 
+.form__button-wrapper {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 80px;
+  }
+}
+
 .form__note {
   line-height: 16px;
-  text-align: center;
 }

@@ -1,5 +1,14 @@
 .main-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.main-nav__toggle {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  margin-right: 4px;
 }
